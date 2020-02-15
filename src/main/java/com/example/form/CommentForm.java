@@ -1,28 +1,18 @@
-package com.example.domain;
+package com.example.form;
 
 /**
- * コメントのドメイン
+ * コメントフォーム.
  * 
  * @author nonaa
  *
  */
-public class Comment {
-	/** ID */
-	private Integer id;
-	/** 名前 */
+public class CommentForm {
+	/** コメント者名 */
 	private String name;
 	/** コメント内容 */
 	private String content;
 	/** 記事ID */
-	private Integer articleId;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	private String articleId;
 
 	public String getName() {
 		return name;
@@ -40,17 +30,21 @@ public class Comment {
 		this.content = content;
 	}
 
-	public Integer getArticleId() {
+	public String getArticleId() {
 		return articleId;
 	}
+	
+	public Integer getIntArticleId() {
+		return Integer.parseInt(articleId);
+	}
 
-	public void setArticleId(Integer articleId) {
+	public void setArticleId(String articleId) {
 		this.articleId = articleId;
 	}
 
 	@Override
 	public String toString() {
-		return "Comment [id=" + id + ", name=" + name + ", content=" + content + ", articleId=" + articleId + "]";
+		return "CommentForm [name=" + name + ", content=" + content + ", articleId=" + articleId + "]";
 	}
 
 }
